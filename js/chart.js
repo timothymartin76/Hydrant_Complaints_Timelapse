@@ -38,10 +38,10 @@
             chart
                 .duration(0)
                 .useInteractiveGuideline(true)
-				.xScale(d3.time.scale())
+		.xScale(d3.time.scale())
         ;
 		
-		 var tickMultiFormat = d3.time.format.utc.multi([  //d3.time.format.utc.multi returns a multi-resolution UTC time format
+	var tickMultiFormat = d3.time.format.utc.multi([  //d3.time.format.utc.multi returns a multi-resolution UTC time format
             ["%-I:%M%p", function(d) { return d.getMinutes(); }], // not the beginning of the hour
             ["%-I%p", function(d) { return d.getHours(); }], // not midnight
             ["%b %-d", function(d) { return d.getDate() != 1; }], // not the first of the month
@@ -53,18 +53,18 @@
 
         // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
         chart.xAxis
-			//.showMaxMin(false)
-            //.axisLabel("")
-			.tickPadding(10)
-            .tickFormat(function (d) { return tickMultiFormat(new Date(d)); })          
+		//.showMaxMin(false)
+        	//.axisLabel("")
+		.tickPadding(10)
+            	.tickFormat(function (d) { return tickMultiFormat(new Date(d)); })          
         ;
 
 	   
         chart.yAxis
-			//.showMaxMin(false)
-            .highlightZero(false)
-            //.axisLabel('y')
-			.tickValues(['40']);
+		//.showMaxMin(false)
+            	.highlightZero(false)
+            	//.axisLabel('y')
+		.tickValues(['40']);
 			
 
         chart.margin({
